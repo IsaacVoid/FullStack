@@ -1,0 +1,96 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background-color: #f2ecec;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;  
+}
+
+.container {
+  display: flex;
+  gap: 5%;
+  padding: 5%;    
+}
+
+.image-box {
+  width: 35vw;
+  height: 60vh;
+  background-color: transparent;
+  border-radius: 10px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* box-shadow: 0 4px 6px rgba(0,0,0,0.2); */
+
+}
+
+.info-box {
+  width: 50vw;
+  background-color: rgba(251, 251, 251, 0.468);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  border-radius: 10px;
+}
+
+.tabs {
+  height: 10vh;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.244);
+  box-sizing: border-box;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  display: flex;
+  padding: 3%;
+  text-align: center;
+  font-size: 14px;
+  justify-content: center;
+}
+
+.tabs nav{
+  display: flex;
+  justify-content: space-around;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.tabs nav a {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  padding: 5px 10px;
+}
+
+.description {
+  padding: 30px;
+  text-align: center;
+  color: #000;
+  background-color: transparent;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.6);
+}
+
+.modal-contenido {
+  background-color: white;
+  margin: 10% auto;
+  padding: 20px;
+  width: 80%;
+  max-width: 500px;
+  border-radius: 8px;
+}
+
+.cerrar {
+  float: right;
+  font-size: 24px;
+  cursor: pointer;
+}

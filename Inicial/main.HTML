@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Prototipo Lo-Fi Web App</title>
+  <link rel="stylesheet" href="Bstyle.css">
+</head>
+<script>
+  function cambiarDescripcion(opcion) {
+    const contenido = {
+      1: `<h3>La Sangre</h3>
+        <p>La sangre es un tejido líquido vital que circula por todo el cuerpo a través de los vasos sanguíneos. 
+        Su función principal es transportar oxígeno, nutrientes, hormonas y desechos, además de participar en la defensa inmunológica y 
+        la regulación de la temperatura corporal. Está compuesta por células (glóbulos rojos, blancos y plaquetas) suspendidas en un líquido
+        llamado plasma.</p>
+        <button onclick="mostrarModal(this)" data-texto="
+          La sangre transporta oxígeno, regula la temperatura, y defiende al cuerpo. Está compuesta por plasma, glóbulos rojos, glóbulos blancos y plaquetas.">
+          Ver Mas
+        </button>`,
+      2: `<h3>Globulos Rojos</h3>
+      <p>Los glóbulos rojos, también llamados eritrocitos, son células en forma de disco que transportan oxígeno desde los pulmones hacia los 
+        tejidos y dióxido de carbono de regreso para ser eliminado. Contienen hemoglobina, una proteína rica en hierro que les da su color rojo 
+        característico y permite el transporte eficiente de gases.</p>
+        <button onclick="mostrarModal(this)" data-texto="
+          Los glóbulos rojos son las células más numerosas de la sangre, con unos 4.5 a 5.5 millones por microlitro en adultos sanos. 
+          Son células sin núcleo en su forma madura y tienen una vida media de aproximadamente 120 días. Su principal función es transportar 
+          oxígeno desde los pulmones hacia los tejidos, y dióxido de carbono de vuelta a los pulmones para ser exhalado. Esto lo logran gracias 
+          a la hemoglobina, una proteína que contiene hierro y le da a la sangre su color rojo.">
+          Ver Mas
+        </button>`,
+      3: `<h3>Globulos Blancos</h3>
+        <p>Los glóbulos blancos o leucocitos son las células encargadas de defender al cuerpo contra infecciones, virus, bacterias y otros 
+          agentes extraños. Existen varios tipos, como los neutrófilos, linfocitos y monocitos, y cada uno cumple funciones específicas en el 
+          sistema inmunológico. Aunque son menos numerosos que los glóbulos rojos, son esenciales para mantener la salud.</p>
+          <button onclick="mostrarModal(this)" data-texto="
+          Los glóbulos blancos forman parte del sistema inmunológico y representan menos del 1% del volumen total de sangre, 
+          pero son fundamentales para la defensa del organismo. Se producen en la médula ósea y se dividen en dos grandes grupos: 
+          Granulocitos: como los neutrófilos (primeros en responder a infecciones), eosinófilos (defienden contra parásitos) y basófilos (participan en reacciones alérgicas).
+          Agranulocitos: linfocitos (B, T y NK, claves para la inmunidad adaptativa) y monocitos (que se convierten en macrófagos para "devorar" patógenos)">
+          Ver Mas
+        </button>`,
+      4: `<h3>Plaquetas</h3>
+      <p>Las plaquetas, o trombocitos, son fragmentos celulares que intervienen en la coagulación de la sangre. Cuando ocurre una herida, se 
+        agrupan en el sitio del daño y ayudan a formar un coágulo para detener el sangrado. Aunque son las células más pequeñas de la sangre, 
+        su función es crucial para evitar hemorragias excesivas.</p>
+        <button onclick="mostrarModal(this)" data-texto="
+          Las plaquetas no son células completas, sino fragmentos celulares producidos por unas células gigantes llamadas megacariocitos en la médula ósea. 
+          Tienen un tamaño muy pequeño y una vida útil de 7 a 10 días. Su función es vital en el proceso de hemostasia, es decir, en detener hemorragias:
+          1) Se adhieren al sitio de la lesión. 2) Se activan y agregan para formar un tapón. 3)Liberan sustancias que ayudan a formar un coágulo estable junto 
+          con proteínas como el fibrinógeno. Un número anormalmente bajo de plaquetas puede causar moretones fáciles o sangrados excesivos.">
+          Ver mas
+        </button>`,
+      5: `<h3>Plasma</h3>
+      <p>El plasma es el componente líquido de la sangre, de color amarillento, que constituye alrededor del 55% de su volumen. Está formado 
+        principalmente por agua, pero también contiene proteínas, sales minerales, hormonas, nutrientes y productos de desecho. Sirve como medio 
+        de transporte para las células sanguíneas y otras sustancias vitales por todo el organismo</p>
+        <button onclick="mostrarModal(this)" data-texto="
+        El plasma es el componente líquido de la sangre, de aspecto amarillento claro, compuesto en un 90-92% por agua. El resto está formado por:
+        1) Proteínas plasmáticas: como la albúmina (regula la presión osmótica), globulinas (defensa inmunológica) y fibrinógeno (coagulación). 
+        2)Electrolitos: sodio, potasio, cloruro, etc. 3) Nutrientes: glucosa, lípidos, aminoácidos. 4) Hormonas y enzimas. 5) Productos de desecho: como urea o ácido úrico.
+        El plasma actúa como medio de transporte para todas estas sustancias, y también ayuda a mantener el equilibrio hídrico del cuerpo.">
+          Ver Mas
+        </button>`
+    };
+    document.getElementById('descripcion').innerHTML = contenido[opcion] || "<p>Contenido no disponible.</p>";
+  }
+  function cambiarEstilos(opcion) {
+    const enlaces = document.querySelectorAll("Nav a");
+    const imagen = document.getElementById("imagen-info");
+
+    switch(opcion){
+      case 1:
+        document.getElementById('descripcion').style.backgroundColor = 'transparent';
+        document.getElementById('descripcion').style.color = 'black';
+        document.getElementById('body').style.backgroundColor = '#c7c2c2';
+        imagen.src = "assets/blood.png"
+        break;
+      case 2:
+        document.getElementById('descripcion').style.color = 'white';
+        document.getElementById('body').style.backgroundColor = 'rgb(175 63 63)';
+        imagen.src = "assets/rbc.png"
+        break;
+      case 3: 
+        imagen.src = "assets/wbc.png"
+        document.getElementById('descripcion').style.color = 'white';
+        document.getElementById('body').style.backgroundColor = 'rgb(157 177 170)';
+        break;
+      case 4:
+        imagen.src = "assets/plat.png"
+        document.getElementById('descripcion').style.color = 'white';
+        document.getElementById('body').style.backgroundColor = 'rgb(93 129 91)';
+        break;
+      case 5:
+        imagen.src = "assets/plas.png"
+        document.getElementById('descripcion').style.color = 'white';
+        document.getElementById('body').style.backgroundColor = 'rgb(132 93 7)';
+        break;
+    }
+    enlaces.forEach(enlace => {
+      enlace.addEventListener("click", function() {
+        enlaces.forEach(e => e.style.color = ""); // Limpia color anterior
+        this.style.color = "#3f3a3a"; // Marca el actual
+      });
+    });
+  }
+
+function mostrarModal(texto) {
+  document.getElementById('modalTexto').innerText = texto;
+  document.getElementById('miModal').style.display = 'block';
+}
+
+function cerrarModal() {
+  document.getElementById('miModal').style.display = 'none';
+}
+
+function mostrarModal(boton) {
+  const texto = boton.getAttribute("data-texto");
+  document.getElementById('modalTexto').innerText = texto;
+  document.getElementById('miModal').style.display = 'block';
+}
+
+function cerrarModal() {
+  document.getElementById('miModal').style.display = 'none';
+}
+</script>
+
+<body id="body">
+  <div class="container">
+    <div class="image-box">
+      <img id="imagen-info" src="assets/blood.png" alt="Imagen informativa" style="object-fit:cover;">
+    </div>
+    <div class="info-box">
+      <div class="tabs" id="barra_nav">
+        <nav>
+          <a href="#" onclick="cambiarDescripcion(1); cambiarEstilos(1)">Genral</a>
+          <a href="#" onclick="cambiarDescripcion(2); cambiarEstilos(2)">Globulos Rojos</a>
+          <a href="#" onclick="cambiarDescripcion(3); cambiarEstilos(3)">Globulos Blancos</a>
+          <a href="#" onclick="cambiarDescripcion(4); cambiarEstilos(4)">Plaquetas</a>
+          <a href="#" onclick="cambiarDescripcion(5); cambiarEstilos(5)">Plasma</a>
+          <a href="">Quiz</a>
+        </nav>
+      </div>
+      <div class="description" id="descripcion">
+        <h3>La Sangre</h3>
+        <p>La sangre es un tejido líquido vital que circula por todo el cuerpo a través de los vasos sanguíneos. 
+        Su función principal es transportar oxígeno, nutrientes, hormonas y desechos, además de participar en la defensa inmunológica y 
+        la regulación de la temperatura corporal. Está compuesta por células (glóbulos rojos, blancos y plaquetas) suspendidas en un líquido
+        llamado plasma.</p>
+        <button onclick="mostrarModal(this)" data-texto="
+          La sangre transporta oxígeno, regula la temperatura, y defiende al cuerpo. Está compuesta por plasma, glóbulos rojos, glóbulos blancos y plaquetas.">
+          Ver Mas
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODALES -->
+ <div id="miModal" class="modal">
+  <div class="modal-contenido">
+    <span class="cerrar" onclick="cerrarModal()">&times;</span>
+    <p id="modalTexto"></p>
+  </div>
+</div>
+
+
+</body>
+</html>
