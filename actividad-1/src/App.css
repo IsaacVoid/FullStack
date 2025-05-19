@@ -1,0 +1,124 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background-color: #f2ecec;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;  
+}
+
+.container {
+  display: flex;
+  gap: 5%;
+  padding: 5%;    
+}
+
+.image-box {
+  width: 35vw;
+  height: 60vh;
+  background-color: transparent;
+  border-radius: 10px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* box-shadow: 0 4px 6px rgba(0,0,0,0.2); */
+
+}
+
+.info-box {
+  width: 50vw;
+  background-color: rgba(251, 251, 251, 0.468);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  border-radius: 10px;
+}
+
+.tabs {
+  display: flex;
+  justify-content: space-around;
+  gap: 10px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.tab {
+  background-color: #eee;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  color: #333;
+}
+
+.tab:hover {
+  background-color: #ddd;
+  transform: translateY(-2px);
+}
+
+.tab.active {
+  background-color: #4a4545;
+  color: white;
+  font-weight: bold;
+}
+
+.description {
+  padding: 30px;
+  text-align: center;
+  color: #000;
+  background-color: transparent;
+}
+
+.ver-mas {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #4a4545;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.ver-mas:hover {
+  background-color: #3b3939;
+  transform: scale(1.03);
+}
+
+.ver-mas:active {
+  transform: scale(0.97);
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-contenido {
+  background: white;
+  padding: 30px;
+  max-width: 500px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+.cerrar {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 24px;
+  cursor: pointer;
+}
